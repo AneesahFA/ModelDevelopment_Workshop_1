@@ -4,198 +4,292 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Machine Learning Algorithms — Visual Framework</title>
-  <meta name="description" content="Infographic-style portfolio artifact outlining 10 machine learning algorithms with type, domains, examples, and explanations." />
+  <meta name="description" content="Portfolio infographic outlining 10 ML algorithms with Type, Domains, Examples, and Brief Explanations." />
   <style>
     :root{
-      --bg:#0f1115;--panel:#171923;--ink:#e7e7ea;--muted:#a9afc1;--accent:#7dd3fc;--chip:#212433;
-      --super:#22c55e;--unsuper:#f59e0b;--deep:#a78bfa;--gen:#fb7185;
+      --ink:#e8eaf0; --muted:#aeb6c8; --accent:#7dd3fc;
+      --super:#22c55e; --unsuper:#f59e0b; --deep:#a78bfa; --gen:#fb7185;
+      --rule:rgba(255,255,255,.08); --wrap:1100px;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0d0f14, #0f1115 60%);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-    .wrap{max-width:1100px;margin:auto;padding:28px}
-    header{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
-    h1{font-size:clamp(26px,4vw,38px);margin:0}
-    .sub{color:var(--muted)}
-    .pill{display:inline-flex;gap:8px;align-items:center;background:var(--chip);padding:8px 12px;border-radius:999px;color:var(--ink);font-size:14px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{grid-column:span 12;background:var(--panel);border:1px solid #22283a;border-radius:16px;padding:18px;box-shadow:0 0 0 1px rgba(255,255,255,0.02) inset}
-    @media(min-width:720px){.card{grid-column:span 6}}
-    @media(min-width:1024px){.card{grid-column:span 4}}
-    h3{margin:0 0 6px 0;font-size:18px}
-    .badges{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
-    .badge{border:1px solid #2b3147;background:#141827;color:#cbd5e1;padding:4px 8px;border-radius:999px;font-size:12px}
-    .type{font-weight:700}
-    .type.super{color:var(--super)}
-    .type.unsuper{color:var(--unsuper)}
-    .type.deep{color:var(--deep)}
-    .type.gen{color:var(--gen)}
-    .kicker{font-size:13px;color:var(--muted);margin-top:2px}
-    ul{padding-left:18px;margin:10px 0}
-    footer{margin:28px 0 8px;color:var(--muted);font-size:14px}
-    .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-    .key{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;background:var(--chip);border-radius:999px;font-size:12px}
-    .dot{width:10px;height:10px;border-radius:50%}
+    body{
+      margin:0; color:var(--ink);
+      font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;
+      background:
+        linear-gradient(180deg, rgba(10,12,18,.86), rgba(10,12,18,.86)),
+        url('/assets/ml-bg.jpg') center/cover fixed no-repeat;
+    }
+    .wrap{max-width:var(--wrap); margin:auto; padding:28px 22px}
+    header{margin:8px 0 18px}
+    h1{margin:0 0 6px; font-size:clamp(26px,4vw,40px)}
+    p.lead{margin:0; color:var(--muted)}
+    .legend{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 4px}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px;
+          border:1px solid var(--rule); border-radius:999px; background:rgba(17,19,27,.45);
+          color:#d5dcec; font-size:12px}
+    .dot{width:10px; height:10px; border-radius:50%}
+    .super{color:var(--super)} .unsuper{color:var(--unsuper)}
+    .deep{color:var(--deep)} .gen{color:var(--gen)}
     .dot.super{background:var(--super)} .dot.unsuper{background:var(--unsuper)}
     .dot.deep{background:var(--deep)} .dot.gen{background:var(--gen)}
-    .hr{height:1px;background:#22283a;margin:20px 0}
+    .hero{margin:14px 0 20px}
+    .hero img{width:100%; border-radius:12px; border:1px solid var(--rule)}
+    .hr{height:1px; background:var(--rule); margin:22px 0}
+    section.alg{padding:10px 0}
+    h2{margin:0 0 4px; font-size:22px}
+    .kicker{margin:0 0 12px; color:var(--muted)}
+    dl{display:grid; grid-template-columns: 180px 1fr; gap:6px 16px; margin:0}
+    dt{color:#c9d2e6; opacity:.9}
+    dd{margin:0}
+    ul{margin:6px 0 0 18px}
+    footer{color:var(--muted); margin:26px 0 10px; font-size:14px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <h1>Machine Learning Algorithms — Visual Framework</h1>
-      <p class="sub">A quick, visual guide to 10 widely used algorithms, organized by learning type with domains, use cases, and plain-English explanations.</p>
+      <p class="lead">Each algorithm includes: <em>Algorithm Type</em>, <em>Application Domains</em>, <em>Example Applications</em>, and a <em>Brief Explanation</em>.</p>
       <div class="legend">
-        <span class="key"><span class="dot super"></span> Supervised</span>
-        <span class="key"><span class="dot unsuper"></span> Unsupervised</span>
-        <span class="key"><span class="dot deep"></span> Deep Learning</span>
-        <span class="key"><span class="dot gen"></span> Generative AI</span>
+        <span class="chip"><span class="dot super"></span> Supervised</span>
+        <span class="chip"><span class="dot unsuper"></span> Unsupervised</span>
+        <span class="chip"><span class="dot deep"></span> Deep Learning</span>
+        <span class="chip"><span class="dot gen"></span> Generative AI</span>
       </div>
-      <span class="pill">Portfolio Artifact • GitHub Pages</span>
     </header>
+
+    <!-- Optional infographic banner (remove if not needed) -->
+    <div class="hero">
+      <img src="/assets/ml_infographic.png" alt="Infographic banner of ML algorithms (optional)">
+    </div>
 
     <div class="hr"></div>
 
-    <section class="grid" aria-label="Algorithm cards">
-      <!-- 1 Decision Tree -->
-      <article class="card">
-        <h3>Decision Tree <span class="type super">• Supervised</span></h3>
-        <p class="kicker">If/then splits create a tree of decisions.</p>
-        <div class="badges">
-          <span class="badge">Tabular Data</span><span class="badge">Explainable AI</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> credit approval, churn prediction, medical triage.</li>
-          <li><b>How it works:</b> recursively splits features at thresholds that best separate labels; leaves = final classes.</li>
-        </ul>
-      </article>
+    <!-- 1 Decision Tree -->
+    <section class="alg" id="decision-tree">
+      <h2>Decision Tree <span class="super">• Supervised</span></h2>
+      <p class="kicker">If/then splits create a readable tree of decisions.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Supervised (Classification/Regression)</dd>
+        <dt>Application Domains</dt><dd>Tabular Data, Explainable AI</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Credit approval</li>
+            <li>Customer churn prediction</li>
+            <li>Clinical triage rules</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Recursively splits features at thresholds that best separate labels; leaves are final predictions.</dd>
+      </dl>
+    </section>
 
-      <!-- 2 Random Forest -->
-      <article class="card">
-        <h3>Random Forest <span class="type super">• Supervised</span></h3>
-        <p class="kicker">Many trees vote to reduce overfitting.</p>
-        <div class="badges">
-          <span class="badge">Tabular Data</span><span class="badge">Robust</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> risk scoring, price prediction, feature importance.</li>
-          <li><b>How it works:</b> trains trees on bootstrapped samples & random features; averages votes/predictions.</li>
-        </ul>
-      </article>
+    <div class="hr"></div>
 
-      <!-- 3 Support Vector Machine -->
-      <article class="card">
-        <h3>Support Vector Machine (SVM) <span class="type super">• Supervised</span></h3>
-        <p class="kicker">Finds the maximum-margin decision boundary.</p>
-        <div class="badges">
-          <span class="badge">Tabular</span><span class="badge">NLP (kernels)</span><span class="badge">Vision (HOG + SVM)</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> text/category classification, anomaly detection (one-class SVM).</li>
-          <li><b>How it works:</b> uses kernels to separate classes with the widest margin; support vectors define the boundary.</li>
-        </ul>
-      </article>
+    <!-- 2 Random Forest -->
+    <section class="alg" id="random-forest">
+      <h2>Random Forest <span class="super">• Supervised</span></h2>
+      <p class="kicker">Ensemble of trees that vote — robust and strong baseline.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Supervised (Classification/Regression)</dd>
+        <dt>Application Domains</dt><dd>Tabular Data, Feature Importance</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Risk scoring & fraud detection</li>
+            <li>Price prediction</li>
+            <li>Variable importance ranking</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Trains many trees on bootstrapped samples with random feature subsets; aggregates their predictions to reduce overfitting.</dd>
+      </dl>
+    </section>
 
-      <!-- 4 Logistic Regression -->
-      <article class="card">
-        <h3>Logistic Regression <span class="type super">• Supervised</span></h3>
-        <p class="kicker">Simple, strong baseline for probabilities.</p>
-        <div class="badges">
-          <span class="badge">Tabular</span><span class="badge">NLP (bag-of-words)</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> spam vs. ham, fraud yes/no, conversion likelihood.</li>
-          <li><b>How it works:</b> linear model with a sigmoid links features to class probabilities.</li>
-        </ul>
-      </article>
+    <div class="hr"></div>
 
-      <!-- 5 K-Means -->
-      <article class="card">
-        <h3>K-Means Clustering <span class="type unsuper">• Unsupervised</span></h3>
-        <p class="kicker">Groups points by nearest centroid.</p>
-        <div class="badges">
-          <span class="badge">Tabular</span><span class="badge">Vision (color clusters)</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> customer segmentation, image color quantization, document grouping.</li>
-          <li><b>How it works:</b> iteratively assigns points to the closest mean and updates centroids until stable.</li>
-        </ul>
-      </article>
+    <!-- 3 SVM -->
+    <section class="alg" id="svm">
+      <h2>Support Vector Machine (SVM) <span class="super">• Supervised</span></h2>
+      <p class="kicker">Finds the maximum-margin decision boundary.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Supervised (Classification; One-Class for anomaly)</dd>
+        <dt>Application Domains</dt><dd>Tabular, NLP (linear), Vision (HOG+SVM)</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Text/topic classification</li>
+            <li>Image category recognition</li>
+            <li>Anomaly detection</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Uses kernels to separate classes with the widest margin; support vectors define the boundary (hyperplane).</dd>
+      </dl>
+    </section>
 
-      <!-- 6 PCA -->
-      <article class="card">
-        <h3>Principal Component Analysis (PCA) <span class="type unsuper">• Unsupervised</span></h3>
-        <p class="kicker">Reduces dimensions while preserving variance.</p>
-        <div class="badges">
-          <span class="badge">Preprocessing</span><span class="badge">Visualization</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> noise reduction, feature compression, 2D plotting of high-dim data.</li>
-          <li><b>How it works:</b> rotates data to new orthogonal axes (components) ordered by explained variance.</li>
-        </ul>
-      </article>
+    <div class="hr"></div>
 
-      <!-- 7 CNN -->
-      <article class="card">
-        <h3>Convolutional Neural Network (CNN) <span class="type deep">• Deep Learning</span></h3>
-        <p class="kicker">Extracts spatial patterns from images.</p>
-        <div class="badges">
-          <span class="badge">Computer Vision</span><span class="badge">Edge/Texture</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> image classification, object detection, medical imaging.</li>
-          <li><b>How it works:</b> convolutions + pooling capture local features; deeper layers build complex concepts.</li>
-        </ul>
-      </article>
+    <!-- 4 Logistic Regression -->
+    <section class="alg" id="logistic-regression">
+      <h2>Logistic Regression <span class="super">• Supervised</span></h2>
+      <p class="kicker">Simple, interpretable probabilities for yes/no outcomes.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Supervised (Binary/Multiclass Classification)</dd>
+        <dt>Application Domains</dt><dd>Tabular Data, Classic NLP (bag-of-words)</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Spam vs ham email filtering</li>
+            <li>Lead conversion likelihood</li>
+            <li>Ad click-through prediction</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Linear model with a sigmoid link maps features to class probabilities; coefficients show feature influence.</dd>
+      </dl>
+    </section>
 
-      <!-- 8 RNN/LSTM -->
-      <article class="card">
-        <h3>RNN / LSTM <span class="type deep">• Deep Learning</span></h3>
-        <p class="kicker">Remembers sequence context over time.</p>
-        <div class="badges">
-          <span class="badge">NLP</span><span class="badge">Time Series</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> language modeling, forecasting, speech recognition.</li>
-          <li><b>How it works:</b> recurrent connections pass hidden state; LSTM gates control memory/forgetting.</li>
-        </ul>
-      </article>
+    <div class="hr"></div>
 
-      <!-- 9 GANs -->
-      <article class="card">
-        <h3>Generative Adversarial Networks (GANs) <span class="type gen">• Generative AI</span></h3>
-        <p class="kicker">Two nets compete: generator vs. discriminator.</p>
-        <div class="badges">
-          <span class="badge">Vision</span><span class="badge">Synthetic Data</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> image synthesis, style transfer, data augmentation.</li>
-          <li><b>How it works:</b> generator creates samples; discriminator critiques; both improve through adversarial training.</li>
-        </ul>
-      </article>
+    <!-- 5 K-Means -->
+    <section class="alg" id="kmeans">
+      <h2>K-Means Clustering <span class="unsuper">• Unsupervised</span></h2>
+      <p class="kicker">Groups points by nearest centroid; fast and scalable.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Unsupervised (Clustering)</dd>
+        <dt>Application Domains</dt><dd>Tabular, Vision (color clusters), Marketing</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Customer segmentation</li>
+            <li>Image color quantization</li>
+            <li>Document/topic grouping</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Iteratively assigns points to the closest centroid and updates centroids to the mean until assignments stabilize.</dd>
+      </dl>
+    </section>
 
-      <!-- 10 Transformers -->
-      <article class="card">
-        <h3>Transformers (e.g., BERT, GPT) <span class="type deep">• Deep / NLP</span></h3>
-        <p class="kicker">Self-attention models long-range dependencies.</p>
-        <div class="badges">
-          <span class="badge">NLP</span><span class="badge">Multimodal</span>
-        </div>
-        <ul>
-          <li><b>Use cases:</b> translation, Q&A, summarization, code & text generation.</li>
-          <li><b>How it works:</b> attention weights relate every token to every other, enabling parallel training and context understanding.</li>
-        </ul>
-      </article>
+    <div class="hr"></div>
+
+    <!-- 6 PCA -->
+    <section class="alg" id="pca">
+      <h2>Principal Component Analysis (PCA) <span class="unsuper">• Unsupervised</span></h2>
+      <p class="kicker">Dimensionality reduction while preserving variance.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Unsupervised (Projection/Compression)</dd>
+        <dt>Application Domains</dt><dd>Preprocessing, Visualization, Noise Reduction</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Feature compression for ML pipelines</li>
+            <li>2D/3D plots of high-dimensional data</li>
+            <li>SNR improvement in sensor data</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Computes orthogonal components (eigenvectors) ordered by explained variance; projects data onto top components.</dd>
+      </dl>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- 7 CNN -->
+    <section class="alg" id="cnn">
+      <h2>Convolutional Neural Network (CNN) <span class="deep">• Deep Learning</span></h2>
+      <p class="kicker">Spatial feature extractor for images and video.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Deep Learning (Supervised)</dd>
+        <dt>Application Domains</dt><dd>Computer Vision, Medical Imaging, Remote Sensing</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Image classification & object detection</li>
+            <li>Tumor/lesion screening</li>
+            <li>Quality inspection on production lines</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Stacks convolutions and pooling to capture local edges/textures that compose higher-level visual features.</dd>
+      </dl>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- 8 RNN/LSTM -->
+    <section class="alg" id="lstm">
+      <h2>RNN / LSTM <span class="deep">• Deep Learning</span></h2>
+      <p class="kicker">Models sequences with memory over time.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Deep Learning (Supervised)</dd>
+        <dt>Application Domains</dt><dd>NLP, Speech, Time Series</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Language modeling & next-word prediction</li>
+            <li>Demand/energy forecasting</li>
+            <li>Speech recognition</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Recurrent connections pass hidden state between steps; LSTM gates regulate what to keep, write, or forget.</dd>
+      </dl>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- 9 GANs -->
+    <section class="alg" id="gans">
+      <h2>Generative Adversarial Networks (GANs) <span class="gen">• Generative AI</span></h2>
+      <p class="kicker">Two networks compete: generator vs. discriminator.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Generative (Unsupervised/Self-supervised)</dd>
+        <dt>Application Domains</dt><dd>Computer Vision, Synthetic Data, Creative Tools</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Image synthesis & style transfer</li>
+            <li>Privacy-preserving data augmentation</li>
+            <li>Restoration (super-resolution, de-noise)</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>A generator creates samples; a discriminator judges real vs fake. Adversarial training improves sample realism.</dd>
+      </dl>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- 10 Transformers -->
+    <section class="alg" id="transformers">
+      <h2>Transformers (BERT / GPT) <span class="deep">• Deep Learning / NLP</span></h2>
+      <p class="kicker">Self-attention captures long-range context in parallel.</p>
+      <dl>
+        <dt>Algorithm Type</dt><dd>Deep Learning (Encoder/Decoder; Pre-training + Fine-tuning)</dd>
+        <dt>Application Domains</dt><dd>NLP, Multimodal (text-image-audio), Code</dd>
+        <dt>Example Applications</dt>
+        <dd>
+          <ul>
+            <li>Translation, Q&A, summarization</li>
+            <li>Text & code generation</li>
+            <li>Search/ranking with embeddings</li>
+          </ul>
+        </dd>
+        <dt>Brief Explanation</dt>
+        <dd>Attention weights relate every token to every other; positional encodings add order. Enables scalable parallel training.</dd>
+      </dl>
     </section>
 
     <div class="hr"></div>
 
     <footer>
-      <p><strong>How to read this page:</strong> Each card lists the <em>algorithm type</em> (learning paradigm), common <em>application domains</em>, real-world <em>use cases</em>, and a short <em>explanation</em>. Together they form a concise infographic-style portfolio artifact.</p>
-      <p>© <span id="yr"></span> Aneesah • Built for the Model Development course.</p>
+      <p>Tip for your reflection: explain why each Type fits its Domains (e.g., CNN → Vision; Transformers → NLP) and how use-case choice depends on data (tabular vs image vs text).</p>
+      <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
     </footer>
   </div>
-
   <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
 </body>
 </html>
