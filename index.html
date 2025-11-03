@@ -333,51 +333,85 @@
       <div class="hr"></div>
     </section>
 
-    <!-- =============== ARTIFACT 2 =============== -->
-    <section id="artifact-2">
-      <header>
-        <h1>Artifact 2 — Neural Network Components & Architecture</h1>
-        <p class="lead">Exploration using <em>Neural Network Playground</em> + a visual breakdown of layers, neurons, weights, activations, loss, and optimization.</p>
-      </header>
+  <!-- =============== ARTIFACT 2 =============== -->
+<section id="artifact-2">
+  <header>
+    <h1>Artifact 2 — Neural Network Components & Architecture</h1>
+    <p class="lead">This artifact explores the structure and function of artificial neural networks using the <em>Neural Network Playground</em>. It demonstrates how key components—layers, neurons, weights, activations, loss functions, and optimizers—interact to enable learning and pattern recognition.</p>
+  </header>
 
-      <div class="two-col">
-        <div class="callout">
-          <h3>Define & Describe Components</h3>
-          <dl>
-            <dt>Layers</dt>
-            <dd>Stacked stages (Input → Hidden → Output) that progressively transform data. Hidden layers learn features; output produces predictions.</dd>
+  <div class="hero">
+    <img src="assets/NNArchitecture.png" alt="Feedforward Neural Network Architecture Diagram">
+  </div>
 
-            <dt>Neurons</dt>
-            <dd>Computation units that combine inputs (weighted sum), apply an activation function, and pass signals forward.</dd>
+  <h3>Define and Describe Components</h3>
+  <div class="callout">
+    <h4>1. Layers</h4>
+    <p>
+      Neural networks are organized into layers that process data in stages.  
+      The <strong>Input Layer</strong> receives raw data (features), passing it forward to one or more <strong>Hidden Layers</strong> that extract patterns and relationships through weighted transformations.  
+      Finally, the <strong>Output Layer</strong> produces predictions or classifications based on the learned representations.  
+      Each layer increases the network’s ability to model complex, nonlinear relationships.
+    </p>
 
-            <dt>Weights</dt>
-            <dd>Trainable parameters on connections that control how strongly each input influences a neuron’s output.</dd>
+    <h4>2. Neurons</h4>
+    <p>
+      A neuron, also known as a node or unit, is the core computational element of a neural network.  
+      Each neuron receives input values, multiplies them by corresponding weights, adds a bias, and applies an activation function.  
+      The result is passed to the next layer.  
+      This simple operation, when repeated across thousands of neurons and layers, allows networks to perform tasks such as image recognition, language understanding, and prediction.
+    </p>
 
-            <dt>Activation Functions</dt>
-            <dd>Non-linear functions (e.g., ReLU, Sigmoid, Tanh) that decide a neuron’s output and let networks learn complex patterns.</dd>
+    <h4>3. Weights</h4>
+    <p>
+      <strong>Weights</strong> determine how strongly each input feature or neuron influences the next layer.  
+      They are the network’s learnable parameters and are adjusted during training to minimize prediction error.  
+      High positive weights strengthen a connection, while negative or smaller weights reduce its impact.  
+      Collectively, weights define what the network has “learned” from the data.
+    </p>
 
-            <dt>Loss Functions</dt>
-            <dd>Objective that measures prediction error. For our regression-style demo: <strong>Mean Squared Error (MSE)</strong> — the average squared difference between predicted and true values.</dd>
+    <h4>4. Activation Functions</h4>
+    <p>
+      Activation functions introduce <strong>non-linearity</strong> into the model, enabling it to learn complex, nonlinear patterns.  
+      Without activations, the entire network would behave like a simple linear regression.  
+      Common activation functions include:
+      <ul>
+        <li><strong>ReLU (Rectified Linear Unit):</strong> Efficient and widely used; outputs 0 for negative inputs and linear for positives.</li>
+        <li><strong>Sigmoid:</strong> Maps values between 0 and 1, often used for probabilities.</li>
+        <li><strong>Tanh:</strong> Similar to sigmoid but ranges from -1 to 1, allowing negative activations.</li>
+      </ul>
+    </p>
 
-            <dt>Optimization Algorithms</dt>
-            <dd>Methods that adjust weights to minimize loss (e.g., SGD, Adam). They compute gradients and take steps that reduce error over time.</dd>
-          </dl>
-        </div>
+    <h4>5. Loss Functions</h4>
+    <p>
+      The <strong>Loss Function</strong> measures how far the model’s predictions are from the true outputs.  
+      It provides numerical feedback to guide learning—lower loss means better performance.  
+      In this network, we use the <strong>Mean Squared Error (MSE)</strong>, which calculates the average of the squared differences between predicted and actual values.  
+      This function is ideal for regression tasks and helps the optimizer minimize overall prediction error during training.
+    </p>
 
-        <figure class="img-frame">
-          <!-- Put your architecture image in /assets and ensure the filename matches below -->
-          <img src="assets/NNArchitecture.jpg" alt="Feedforward Neural Network Architecture diagram">
-        </figure>
-      </div>
+    <h4>6. Optimization Algorithms</h4>
+    <p>
+      Optimization algorithms adjust the network’s weights to reduce the loss function.  
+      They calculate gradients using <strong>backpropagation</strong> and update weights in the direction that lowers error.  
+      Common optimizers include:
+      <ul>
+        <li><strong>Stochastic Gradient Descent (SGD):</strong> Updates weights incrementally for faster convergence.</li>
+        <li><strong>Adam Optimizer:</strong> Combines the benefits of momentum and adaptive learning rates, improving stability and speed.</li>
+      </ul>
+      The optimizer is crucial because it ensures that learning happens efficiently and avoids getting stuck in local minima.
+    </p>
+  </div>
 
-      <h3>Illustrate the Structure</h3>
-      <p class="small">Data flows left → right: features enter the <em>Input Layer</em>, are transformed by one or more <em>Hidden Layers</em> (with ReLU), and produce a prediction at the <em>Output Layer</em>. During training, the optimizer updates weights using the gradient of the <em>Loss (MSE)</em>.</p>
-
-      <h3>Summary</h3>
-      <p class="callout">
-        Visualizing a neural network clarifies how each component contributes to learning. Layers structure the computation, neurons and weights capture relationships, activations add non-linearity, the loss quantifies mistakes, and the optimizer iteratively improves the model. Experimenting in Neural Network Playground shows how changing layer depth, neuron count, noise, or activation choice impacts fit quality, training dynamics, and generalization.
-      </p>
-    </section>
+  <h3>Summary</h3>
+  <p class="callout">
+    This visualization demonstrates how each component contributes to the neural network’s learning process.  
+    Layers structure the flow of information, neurons perform the core computations, and weights capture learned relationships.  
+    Activation functions enable flexibility and non-linearity, while the loss function measures performance and drives improvement.  
+    Finally, the optimizer refines the model by adjusting weights over many iterations.  
+    Through experiments in the Neural Network Playground, it becomes clear that even small changes in architecture—like increasing neurons or altering activations—can significantly impact how well a model learns and generalizes.
+  </p>
+</section>
 
   </div>
   <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
