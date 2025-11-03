@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Machine Learning Algorithms: Visual Framework</title>
-  <meta name="description" content="Portfolio infographic outlining 10 ML algorithms with Type, Domains, Examples, and Brief Explanations." />
+  <title>Portfolio Artifacts – Machine Learning & Neural Networks</title>
+  <meta name="description" content="Artifact 1: ML Algorithms Visual Framework. Artifact 2: Neural Network Components & Architecture (Playground exploration)." />
   <style>
     :root{
       --ink:#e8eaf0; --muted:#aeb6c8; --accent:#7dd3fc;
@@ -12,6 +12,7 @@
       --rule:rgba(255,255,255,.08); --wrap:1100px;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0; color:var(--ink);
       font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;
@@ -35,270 +36,348 @@
     .hero{margin:14px 0 20px}
     .hero img{width:100%; border-radius:12px; border:1px solid var(--rule)}
     .hr{height:1px; background:var(--rule); margin:22px 0}
-    section.alg{padding:10px 0}
+    section{padding:10px 0}
     h2{margin:0 0 4px; font-size:22px}
+    h3{margin:18px 0 8px; font-size:19px}
     .kicker{margin:0 0 12px; color:var(--muted)}
     dl{display:grid; grid-template-columns: 180px 1fr; gap:6px 16px; margin:0}
     dt{color:#c9d2e6; opacity:.9}
     dd{margin:0}
     ul{margin:6px 0 0 18px}
     footer{color:var(--muted); margin:26px 0 10px; font-size:14px}
+
+    /* top nav */
+    .topnav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(15,18,26,.65); border-bottom:1px solid var(--rule);
+    }
+    .topnav .inner{max-width:var(--wrap); margin:auto; padding:10px 22px; display:flex; gap:10px}
+    .tab{
+      color:#e7edf9; text-decoration:none; padding:8px 12px; border:1px solid var(--rule);
+      border-radius:10px; background:rgba(255,255,255,.05); font-weight:600
+    }
+    .tab:hover{background:rgba(255,255,255,.09)}
+    .badge{font-size:12px; opacity:.85; margin-left:6px; padding:2px 6px; border-radius:999px; background:rgba(125,211,252,.15); border:1px solid var(--rule)}
+    .callout{background:rgba(255,255,255,.05); border:1px solid var(--rule); border-radius:12px; padding:14px}
+    .two-col{display:grid; grid-template-columns: 1fr; gap:14px}
+    @media (min-width:900px){ .two-col{grid-template-columns: 1.1fr .9fr} }
+    .img-frame{border:1px solid var(--rule); border-radius:12px; overflow:hidden}
+    .img-frame img{width:100%; display:block}
+    .small{color:var(--muted); font-size:14px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Machine Learning Algorithms: Visual Framework</h1>
-      <p class="lead">Each algorithm includes: <em>Algorithm Type</em>, <em>Application Domains</em>, <em>Example Applications</em>, and a <em>Brief Explanation</em>.</p>
-      <div class="legend">
-        <span class="chip"><span class="dot super"></span> Supervised</span>
-        <span class="chip"><span class="dot unsuper"></span> Unsupervised</span>
-        <span class="chip"><span class="dot deep"></span> Deep Learning</span>
-        <span class="chip"><span class="dot gen"></span> Generative AI</span>
-      </div>
-    </header>
-
-    <!-- Optional infographic banner (remove if not needed) -->
-    <div class="hero">
-      <img src="assets/machine.jpg" alt="Infographic banner: ML algorithms">
+  <!-- Sticky top navigation: jump between artifacts -->
+  <nav class="topnav">
+    <div class="inner">
+      <a class="tab" href="#artifact-1">Artifact 1 <span class="badge">ML Algorithms</span></a>
+      <a class="tab" href="#artifact-2">Artifact 2 <span class="badge">Neural Networks</span></a>
     </div>
+  </nav>
 
-    <div class="hr"></div>
+  <div class="wrap">
 
-    <!-- 1 Decision Tree -->
-    <section class="alg" id="decision-tree">
-      <h2>Decision Tree <span class="super">• Supervised</span></h2>
-      <p class="kicker">If/then splits create a readable tree of decisions.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Supervised (Classification/Regression)</dd>
-        <dt>Application Domains</dt><dd>Tabular Data, Explainable AI</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Credit approval</li>
-            <li>Customer churn prediction</li>
-            <li>Clinical triage rules</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Recursively splits features at thresholds that best separate labels; leaves are final predictions.</dd>
-      </dl>
-      <img src="assets/1.jpg" alt="Decision Tree Infographic">
+    <!-- =============== ARTIFACT 1 =============== -->
+    <section id="artifact-1">
+      <header>
+        <h1>Artifact 1 — Machine Learning Algorithms: Visual Framework</h1>
+        <p class="lead">Each algorithm includes: <em>Algorithm Type</em>, <em>Application Domains</em>, <em>Example Applications</em>, and a <em>Brief Explanation</em>.</p>
+        <div class="legend">
+          <span class="chip"><span class="dot super"></span> Supervised</span>
+          <span class="chip"><span class="dot unsuper"></span> Unsupervised</span>
+          <span class="chip"><span class="dot deep"></span> Deep Learning</span>
+          <span class="chip"><span class="dot gen"></span> Generative AI</span>
+        </div>
+      </header>
+
+      <div class="hero">
+        <img src="assets/machine.jpg" alt="Infographic banner: ML algorithms">
+      </div>
+
+      <div class="hr"></div>
+
+      <!-- *** Your original 10-algorithm sections remain unchanged below *** -->
+
+      <!-- 1 Decision Tree -->
+      <section class="alg" id="decision-tree">
+        <h2>Decision Tree <span class="super">• Supervised</span></h2>
+        <p class="kicker">If/then splits create a readable tree of decisions.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Supervised (Classification/Regression)</dd>
+          <dt>Application Domains</dt><dd>Tabular Data, Explainable AI</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Credit approval</li>
+              <li>Customer churn prediction</li>
+              <li>Clinical triage rules</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Recursively splits features at thresholds that best separate labels; leaves are final predictions.</dd>
+        </dl>
+        <img src="assets/1.jpg" alt="Decision Tree Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 2 Random Forest -->
+      <section class="alg" id="random-forest">
+        <h2>Random Forest <span class="super">• Supervised</span></h2>
+        <p class="kicker">Ensemble of trees that vote, robust and strong baseline.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Supervised (Classification/Regression)</dd>
+          <dt>Application Domains</dt><dd>Tabular Data, Feature Importance</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Risk scoring & fraud detection</li>
+              <li>Price prediction</li>
+              <li>Variable importance ranking</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Trains many trees on bootstrapped samples with random feature subsets; aggregates their predictions to reduce overfitting.</dd>
+        </dl>
+        <img src="assets/2.jpg" alt="Random Forest Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 3 SVM -->
+      <section class="alg" id="svm">
+        <h2>Support Vector Machine (SVM) <span class="super">• Supervised</span></h2>
+        <p class="kicker">Finds the maximum-margin decision boundary.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Supervised (Classification; One-Class for anomaly)</dd>
+          <dt>Application Domains</dt><dd>Tabular, NLP (linear), Vision (HOG+SVM)</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Text/topic classification</li>
+              <li>Image category recognition</li>
+              <li>Anomaly detection</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Uses kernels to separate classes with the widest margin; support vectors define the boundary (hyperplane).</dd>
+        </dl>
+        <img src="assets/3.jpg" alt="SVM Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 4 Logistic Regression -->
+      <section class="alg" id="logistic-regression">
+        <h2>Logistic Regression <span class="super">• Supervised</span></h2>
+        <p class="kicker">Simple, interpretable probabilities for yes/no outcomes.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Supervised (Binary/Multiclass Classification)</dd>
+          <dt>Application Domains</dt><dd>Tabular Data, Classic NLP (bag-of-words)</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Spam vs ham email filtering</li>
+              <li>Lead conversion likelihood</li>
+              <li>Ad click-through prediction</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Linear model with a sigmoid link maps features to class probabilities; coefficients show feature influence.</dd>
+        </dl>
+        <img src="assets/4.jpg" alt="Logistic Regression Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 5 K-Means -->
+      <section class="alg" id="kmeans">
+        <h2>K-Means Clustering <span class="unsuper">• Unsupervised</span></h2>
+        <p class="kicker">Groups points by nearest centroid; fast and scalable.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Unsupervised (Clustering)</dd>
+          <dt>Application Domains</dt><dd>Tabular, Vision (color clusters), Marketing</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Customer segmentation</li>
+              <li>Image color quantization</li>
+              <li>Document/topic grouping</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Iteratively assigns points to the closest centroid and updates centroids to the mean until assignments stabilize.</dd>
+        </dl>
+        <img src="assets/5.jpg" alt="K-Means Clustering Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 6 PCA -->
+      <section class="alg" id="pca">
+        <h2>Principal Component Analysis (PCA) <span class="unsuper">• Unsupervised</span></h2>
+        <p class="kicker">Dimensionality reduction while preserving variance.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Unsupervised (Projection/Compression)</dd>
+          <dt>Application Domains</dt><dd>Preprocessing, Visualization, Noise Reduction</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Feature compression for ML pipelines</li>
+              <li>2D/3D plots of high-dimensional data</li>
+              <li>SNR improvement in sensor data</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Computes orthogonal components (eigenvectors) ordered by explained variance; projects data onto top components.</dd>
+        </dl>
+        <img src="assets/6.jpg" alt="PCA Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 7 CNN -->
+      <section class="alg" id="cnn">
+        <h2>Convolutional Neural Network (CNN) <span class="deep">• Deep Learning</span></h2>
+        <p class="kicker">Spatial feature extractor for images and video.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Deep Learning (Supervised)</dd>
+          <dt>Application Domains</dt><dd>Computer Vision, Medical Imaging, Remote Sensing</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Image classification & object detection</li>
+              <li>Tumor/lesion screening</li>
+              <li>Quality inspection on production lines</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Stacks convolutions and pooling to capture local edges/textures that compose higher-level visual features.</dd>
+        </dl>
+        <img src="assets/7.jpg" alt="Convolutional Neural Network Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 8 RNN/LSTM -->
+      <section class="alg" id="lstm">
+        <h2>RNN / LSTM <span class="deep">• Deep Learning</span></h2>
+        <p class="kicker">Models sequences with memory over time.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Deep Learning (Supervised)</dd>
+          <dt>Application Domains</dt><dd>NLP, Speech, Time Series</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Language modeling & next-word prediction</li>
+              <li>Demand/energy forecasting</li>
+              <li>Speech recognition</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Recurrent connections pass hidden state between steps; LSTM gates regulate what to keep, write, or forget.</dd>
+        </dl>
+        <img src="assets/8.jpg" alt="RNN LSTM Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 9 GANs -->
+      <section class="alg" id="gans">
+        <h2>Generative Adversarial Networks (GANs) <span class="gen">• Generative AI</span></h2>
+        <p class="kicker">Two networks compete: generator vs. discriminator.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Generative (Unsupervised/Self-supervised)</dd>
+          <dt>Application Domains</dt><dd>Computer Vision, Synthetic Data, Creative Tools</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Image synthesis & style transfer</li>
+              <li>Privacy-preserving data augmentation</li>
+              <li>Restoration (super-resolution, de-noise)</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>A generator creates samples; a discriminator judges real vs fake. Adversarial training improves sample realism.</dd>
+        </dl>
+        <img src="assets/9.jpg" alt="GANs Infographic">
+      </section>
+
+      <div class="hr"></div>
+
+      <!-- 10 Transformers -->
+      <section class="alg" id="transformers">
+        <h2>Transformers (BERT / GPT) <span class="deep">• Deep Learning / NLP</span></h2>
+        <p class="kicker">Self-attention captures long-range context in parallel.</p>
+        <dl>
+          <dt>Algorithm Type</dt><dd>Deep Learning (Encoder/Decoder; Pre-training + Fine-tuning)</dd>
+          <dt>Application Domains</dt><dd>NLP, Multimodal (text-image-audio), Code</dd>
+          <dt>Example Applications</dt>
+          <dd>
+            <ul>
+              <li>Translation, Q&A, summarization</li>
+              <li>Text & code generation</li>
+              <li>Search/ranking with embeddings</li>
+            </ul>
+          </dd>
+          <dt>Brief Explanation</dt>
+          <dd>Attention weights relate every token to every other; positional encodings add order. Enables scalable parallel training.</dd>
+        </dl>
+        <img src="assets/10.jpg" alt="Transformers Infographic">
+      </section>
+
+      <footer>
+        <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
+      </footer>
+      <div class="hr"></div>
     </section>
 
-    <div class="hr"></div>
+    <!-- =============== ARTIFACT 2 =============== -->
+    <section id="artifact-2">
+      <header>
+        <h1>Artifact 2 — Neural Network Components & Architecture</h1>
+        <p class="lead">Exploration using <em>Neural Network Playground</em> + a visual breakdown of layers, neurons, weights, activations, loss, and optimization.</p>
+      </header>
 
-    <!-- 2 Random Forest -->
-    <section class="alg" id="random-forest">
-      <h2>Random Forest <span class="super">• Supervised</span></h2>
-      <p class="kicker">Ensemble of trees that vote, robust and strong baseline.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Supervised (Classification/Regression)</dd>
-        <dt>Application Domains</dt><dd>Tabular Data, Feature Importance</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Risk scoring & fraud detection</li>
-            <li>Price prediction</li>
-            <li>Variable importance ranking</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Trains many trees on bootstrapped samples with random feature subsets; aggregates their predictions to reduce overfitting.</dd>
-      </dl>
-      <img src="assets/2.jpg" alt="Random Forest Infographic">
+      <div class="two-col">
+        <div class="callout">
+          <h3>Define & Describe Components</h3>
+          <dl>
+            <dt>Layers</dt>
+            <dd>Stacked stages (Input → Hidden → Output) that progressively transform data. Hidden layers learn features; output produces predictions.</dd>
+
+            <dt>Neurons</dt>
+            <dd>Computation units that combine inputs (weighted sum), apply an activation function, and pass signals forward.</dd>
+
+            <dt>Weights</dt>
+            <dd>Trainable parameters on connections that control how strongly each input influences a neuron’s output.</dd>
+
+            <dt>Activation Functions</dt>
+            <dd>Non-linear functions (e.g., ReLU, Sigmoid, Tanh) that decide a neuron’s output and let networks learn complex patterns.</dd>
+
+            <dt>Loss Functions</dt>
+            <dd>Objective that measures prediction error. For our regression-style demo: <strong>Mean Squared Error (MSE)</strong> — the average squared difference between predicted and true values.</dd>
+
+            <dt>Optimization Algorithms</dt>
+            <dd>Methods that adjust weights to minimize loss (e.g., SGD, Adam). They compute gradients and take steps that reduce error over time.</dd>
+          </dl>
+        </div>
+
+        <figure class="img-frame">
+          <!-- Put your architecture image in /assets and ensure the filename matches below -->
+          <img src="assets/NNArchitecture.png" alt="Feedforward Neural Network Architecture diagram">
+        </figure>
+      </div>
+
+      <h3>Illustrate the Structure</h3>
+      <p class="small">Data flows left → right: features enter the <em>Input Layer</em>, are transformed by one or more <em>Hidden Layers</em> (with ReLU), and produce a prediction at the <em>Output Layer</em>. During training, the optimizer updates weights using the gradient of the <em>Loss (MSE)</em>.</p>
+
+      <h3>Summary</h3>
+      <p class="callout">
+        Visualizing a neural network clarifies how each component contributes to learning. Layers structure the computation, neurons and weights capture relationships, activations add non-linearity, the loss quantifies mistakes, and the optimizer iteratively improves the model. Experimenting in Neural Network Playground shows how changing layer depth, neuron count, noise, or activation choice impacts fit quality, training dynamics, and generalization.
+      </p>
     </section>
-
-    <div class="hr"></div>
-
-    <!-- 3 SVM -->
-    <section class="alg" id="svm">
-      <h2>Support Vector Machine (SVM) <span class="super">• Supervised</span></h2>
-      <p class="kicker">Finds the maximum-margin decision boundary.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Supervised (Classification; One-Class for anomaly)</dd>
-        <dt>Application Domains</dt><dd>Tabular, NLP (linear), Vision (HOG+SVM)</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Text/topic classification</li>
-            <li>Image category recognition</li>
-            <li>Anomaly detection</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Uses kernels to separate classes with the widest margin; support vectors define the boundary (hyperplane).</dd>
-      </dl>
-      <img src="assets/3.jpg" alt="SVM Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 4 Logistic Regression -->
-    <section class="alg" id="logistic-regression">
-      <h2>Logistic Regression <span class="super">• Supervised</span></h2>
-      <p class="kicker">Simple, interpretable probabilities for yes/no outcomes.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Supervised (Binary/Multiclass Classification)</dd>
-        <dt>Application Domains</dt><dd>Tabular Data, Classic NLP (bag-of-words)</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Spam vs ham email filtering</li>
-            <li>Lead conversion likelihood</li>
-            <li>Ad click-through prediction</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Linear model with a sigmoid link maps features to class probabilities; coefficients show feature influence.</dd>
-      </dl>
-      <img src="assets/4.jpg" alt="Logistic Regression Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 5 K-Means -->
-    <section class="alg" id="kmeans">
-      <h2>K-Means Clustering <span class="unsuper">• Unsupervised</span></h2>
-      <p class="kicker">Groups points by nearest centroid; fast and scalable.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Unsupervised (Clustering)</dd>
-        <dt>Application Domains</dt><dd>Tabular, Vision (color clusters), Marketing</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Customer segmentation</li>
-            <li>Image color quantization</li>
-            <li>Document/topic grouping</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Iteratively assigns points to the closest centroid and updates centroids to the mean until assignments stabilize.</dd>
-      </dl>
-      <img src="assets/5.jpg" alt="K-Means Clustering Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 6 PCA -->
-    <section class="alg" id="pca">
-      <h2>Principal Component Analysis (PCA) <span class="unsuper">• Unsupervised</span></h2>
-      <p class="kicker">Dimensionality reduction while preserving variance.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Unsupervised (Projection/Compression)</dd>
-        <dt>Application Domains</dt><dd>Preprocessing, Visualization, Noise Reduction</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Feature compression for ML pipelines</li>
-            <li>2D/3D plots of high-dimensional data</li>
-            <li>SNR improvement in sensor data</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Computes orthogonal components (eigenvectors) ordered by explained variance; projects data onto top components.</dd>
-      </dl>
-      <img src="assets/6.jpg" alt="PCA Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 7 CNN -->
-    <section class="alg" id="cnn">
-      <h2>Convolutional Neural Network (CNN) <span class="deep">• Deep Learning</span></h2>
-      <p class="kicker">Spatial feature extractor for images and video.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Deep Learning (Supervised)</dd>
-        <dt>Application Domains</dt><dd>Computer Vision, Medical Imaging, Remote Sensing</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Image classification & object detection</li>
-            <li>Tumor/lesion screening</li>
-            <li>Quality inspection on production lines</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Stacks convolutions and pooling to capture local edges/textures that compose higher-level visual features.</dd>
-      </dl>
-      <img src="assets/7.jpg" alt="Convolutional Neural Network Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 8 RNN/LSTM -->
-    <section class="alg" id="lstm">
-      <h2>RNN / LSTM <span class="deep">• Deep Learning</span></h2>
-      <p class="kicker">Models sequences with memory over time.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Deep Learning (Supervised)</dd>
-        <dt>Application Domains</dt><dd>NLP, Speech, Time Series</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Language modeling & next-word prediction</li>
-            <li>Demand/energy forecasting</li>
-            <li>Speech recognition</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Recurrent connections pass hidden state between steps; LSTM gates regulate what to keep, write, or forget.</dd>
-      </dl>
-      <img src="assets/8.jpg" alt="RNN LSTM Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 9 GANs -->
-    <section class="alg" id="gans">
-      <h2>Generative Adversarial Networks (GANs) <span class="gen">• Generative AI</span></h2>
-      <p class="kicker">Two networks compete: generator vs. discriminator.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Generative (Unsupervised/Self-supervised)</dd>
-        <dt>Application Domains</dt><dd>Computer Vision, Synthetic Data, Creative Tools</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Image synthesis & style transfer</li>
-            <li>Privacy-preserving data augmentation</li>
-            <li>Restoration (super-resolution, de-noise)</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>A generator creates samples; a discriminator judges real vs fake. Adversarial training improves sample realism.</dd>
-      </dl>
-      <img src="assets/9.jpg" alt="GANs Infographic">
-    </section>
-
-    <div class="hr"></div>
-
-    <!-- 10 Transformers -->
-    <section class="alg" id="transformers">
-      <h2>Transformers (BERT / GPT) <span class="deep">• Deep Learning / NLP</span></h2>
-      <p class="kicker">Self-attention captures long-range context in parallel.</p>
-      <dl>
-        <dt>Algorithm Type</dt><dd>Deep Learning (Encoder/Decoder; Pre-training + Fine-tuning)</dd>
-        <dt>Application Domains</dt><dd>NLP, Multimodal (text-image-audio), Code</dd>
-        <dt>Example Applications</dt>
-        <dd>
-          <ul>
-            <li>Translation, Q&A, summarization</li>
-            <li>Text & code generation</li>
-            <li>Search/ranking with embeddings</li>
-          </ul>
-        </dd>
-        <dt>Brief Explanation</dt>
-        <dd>Attention weights relate every token to every other; positional encodings add order. Enables scalable parallel training.</dd>
-      </dl>
-      <img src="assets/10.jpg" alt="Transformers Infographic">
-    </section>
-
-     <footer>
-      <!-- <p>Tip for your reflection: explain why each Type fits its Domains (e.g., CNN → Vision; Transformers → NLP) and how use-case choice depends on data (tabular vs image vs text).</p> -->
-      <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
-    </footer>
-
-    <div class="hr"></div>
 
   </div>
   <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
