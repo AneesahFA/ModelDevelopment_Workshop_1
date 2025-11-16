@@ -465,76 +465,64 @@
     </section>
 
     <!-- =============== ARTIFACT 3 =============== -->
-    <section id="artifact-3">
-      <header>
-        <h1>Artifact 3 ~ Explainable AI & Trustworthy Large Language Models</h1>
-        <p class="lead">
-          This artifact summarizes key ideas in Explainable AI (XAI) for models like GPT, Claude, Gemini, and LLaMA. It highlights why explainability matters, the main challenges, how validation and metrics support trustworthy AI, and current industry techniques to make model behavior more transparent.
-        </p>
-      </header>
+  <section id="artifact-3">
+  <header>
+    <h1>Artifact 3 ~ Explainable AI & Trustworthy Large Language Models</h1>
+    <p class="lead">
+      This artifact summarizes key concepts in Explainable AI (XAI), including why transparency matters,
+      the challenges in making AI explainable, how performance validation builds trust, and what major
+      organizations are doing to improve model transparency and safety.
+    </p>
+  </header>
 
-      <div class="grid-xai">
-        <!-- Card 1 -->
-        <div class="card-xai">
-          <h3>Explainable AI & Its Importance</h3>
-          <ul>
-            <li><strong>Explainable AI (XAI)</strong> focuses on making AI decisions understandable so people can see <em>why</em> a model produced a particular answer.</li>
-            <li>Large language models often act like <strong>“black boxes”</strong>, so their internal reasoning is hidden from users.</li>
-            <li>Transparent explanations build <strong>trust</strong> for users, organizations, and regulators, especially in domains like healthcare, finance, and law.</li>
-            <li>XAI also supports <strong>debugging and improvement</strong> by revealing where models hallucinate, fail, or encode bias.</li>
-            <li>Ultimately, explainability is linked to <strong>accountability</strong>: if AI influences real people’s lives, its reasoning should not be a mystery.</li>
-          </ul>
-        </div>
+  <!-- HERO IMAGE -->
+  <div class="hero">
+    <img src="assets/xai-visual.jpg" alt="Explainable AI Infographic Slide">
+  </div>
 
-        <!-- Card 2 -->
-        <div class="card-xai">
-          <h3>Challenges in Explainability</h3>
-          <ul>
-            <li><strong>Opacity & complexity:</strong> LLMs use billions of parameters, and no single piece explains a specific output.</li>
-            <li><strong>Post-hoc explanations</strong> are created after the decision and may not fully match the model’s real internal process.</li>
-            <li><strong>Data quality & bias:</strong> models inherit imperfections, stereotypes, and gaps from the data they are trained on.</li>
-            <li><strong>Dynamic behavior:</strong> small changes in wording or context can produce very different answers.</li>
-            <li><strong>Regulatory & ethical pressures:</strong> laws and policies increasingly require meaningful explanations that are difficult to provide for complex systems.</li>
-          </ul>
-        </div>
+  <h3>1. What Is Explainable AI (XAI) & Why It Matters</h3>
+  <p class="callout">
+    Explainable AI focuses on helping users understand <em>why</em> a model produced a certain output.
+    For large language models like GPT, Claude, Gemini, and LLaMA, this transparency is essential for
+    trust, accountability, safety, and debugging. XAI supports responsible AI by ensuring complex systems
+    are not treated as “black boxes” but as tools whose reasoning can be interpreted and analyzed.
+  </p>
 
-        <!-- Card 3 -->
-        <div class="card-xai">
-          <h3>Validation & Performance Metrics</h3>
-          <ul>
-            <li><strong>Validation</strong> tests models on unseen data to check how well they generalize to real-world use cases.</li>
-            <li><strong>Performance metrics</strong> such as accuracy, precision, recall, F1 score, and calibration quantify how often the model is correct.</li>
-            <li><strong>Robustness testing</strong> stresses the model with edge cases, adversarial prompts, and unusual inputs to see if it still behaves safely.</li>
-            <li><strong>Fairness and bias metrics</strong> evaluate whether performance is similar across groups, supporting ethical deployment.</li>
-            <li>Together, validation and metrics provide <strong>evidence</strong> that a system is not just powerful but also <strong>reliable and trustworthy</strong>.</li>
-          </ul>
-        </div>
+  <h3>2. Challenges in Explainability</h3>
+  <p class="callout">
+    Making advanced AI explainable is difficult for several reasons:
+    <ul>
+      <li>LLMs contain billions of parameters, making internal reasoning opaque.</li>
+      <li>Post-hoc explanations may not fully reflect the model’s true behavior.</li>
+      <li>Training data may contain bias, gaps, or noise.</li>
+      <li>Models behave differently depending on prompt wording or context.</li>
+      <li>Regulations increasingly require transparency and traceability.</li>
+    </ul>
+  </p>
 
-        <!-- Card 4 -->
-        <div class="card-xai">
-          <h3>Current Solutions & Techniques</h3>
-          <ul>
-            <li><strong>OpenAI & Anthropic</strong> use Reinforcement Learning from Human Feedback (RLHF), red-teaming, and safety evaluations to shape model behavior.</li>
-            <li><strong>Google</strong> introduced <em>Model Cards</em>, interpretability tools (e.g., saliency visualizations), and strong review processes for models like Gemini.</li>
-            <li><strong>Meta</strong> provides documentation and responsible-release guidelines for models such as LLaMA, along with ongoing interpretability research.</li>
-            <li>Across industry, tools like <strong>attention visualization</strong>, local explanation methods (LIME/SHAP-style ideas), and <strong>chain-of-thought reasoning</strong> help reveal how models prioritize inputs.</li>
-            <li>Organizations also publish <strong>transparency reports</strong>, safety updates, and usage policies to help non-technical audiences understand where models work well—and where they do not.</li>
-          </ul>
-        </div>
-      </div>
+  <h3>3. Validation & Performance Metrics for Trustworthy AI</h3>
+  <p class="callout">
+    Trustworthy AI is built on rigorous validation and testing. Key metrics and methods include:
+    <ul>
+      <li><strong>Accuracy, Precision, Recall, F1 Score</strong> – measure predictive reliability.</li>
+      <li><strong>Robustness Tests</strong> – check stability across edge cases and adversarial prompts.</li>
+      <li><strong>Fairness Metrics</strong> – evaluate whether performance is consistent across groups.</li>
+      <li><strong>Generalization Testing</strong> – ensures the model performs well on new, unseen data.</li>
+    </ul>
+    Together, these provide measurable evidence that an AI system is reliable, safe, and suitable for real-world use.
+  </p>
 
-      <p class="tagline">
-        Goal: Combine explainability, validation, and clear performance metrics so AI systems are not only powerful, but also <strong>transparent, fair, and trustworthy</strong> for real people.
-      </p>
-
-      <h3>Explanatory Summary</h3>
-      <p class="callout">
-        This visual introduces Explainable AI (XAI) in the context of large language models such as GPT, Claude, Gemini, and LLaMA. The top-left section defines XAI and explains why transparency is crucial for trust, accountability, and debugging in high-stakes domains. The top-right section highlights key obstacles, including the complexity of “black box” models, post-hoc explanations that may not match true reasoning, data-driven bias, and regulatory expectations for transparency. Together, these panels show why explainability is both technically challenging and ethically important.
-      </p>
-      <p class="callout">
-        The bottom panels connect explainability to validation and real industry practice. The bottom-left section summarizes how validation methods and performance metrics—such as accuracy, precision, recall, robustness, and fairness checks—provide evidence that a model is reliable and safe to deploy. The bottom-right section highlights current approaches from organizations like OpenAI, Google, Meta, and Anthropic, including human-feedback training, interpretability tools, documentation, and transparency reports. Visually grouping the content into four quadrants helps a non-technical audience see how challenges, metrics, and practical techniques fit together toward the shared goal of trustworthy, explainable AI.
-      </p>
-    </section>
+  <h3>4. Current Industry Techniques to Improve Explainability</h3>
+  <p class="callout">
+    Major AI organizations use a range of tools and practices to increase transparency:
+    <ul>
+      <li>OpenAI & Anthropic: RLHF, red-teaming, system cards, safety evaluations.</li>
+      <li>Google: Model Cards, interpretability tools, safety reviews.</li>
+      <li>Meta: Transparency documentation and open-weight model research.</li>
+      <li>Common tools: Attention visualization, chain-of-thought reasoning, local explanation methods (LIME/SHAP).</li>
+    </ul>
+    These approaches help users understand how models behave and where their limitations lie.
+  </p>
 
     <footer>
       <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
