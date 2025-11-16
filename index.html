@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio Artifacts ~ Machine Learning & Neural Networks</title>
-  <meta name="description" content="Artifact 1: ML Algorithms Visual Framework. Artifact 2: Neural Network Components & Architecture (Playground exploration)." />
+  <meta name="description" content="Artifact 1: ML Algorithms Visual Framework. Artifact 2: Neural Network Components & Architecture. Artifact 3: Explainable AI & Trustworthy Large Language Models." />
   <style>
     :root{
       --ink:#e8eaf0; --muted:#aeb6c8; --accent:#7dd3fc;
@@ -52,7 +52,7 @@
       backdrop-filter:saturate(140%) blur(8px);
       background:rgba(15,18,26,.65); border-bottom:1px solid var(--rule);
     }
-    .topnav .inner{max-width:var(--wrap); margin:auto; padding:10px 22px; display:flex; gap:10px}
+    .topnav .inner{max-width:var(--wrap); margin:auto; padding:10px 22px; display:flex; gap:10px; flex-wrap:wrap}
     .tab{
       color:#e7edf9; text-decoration:none; padding:8px 12px; border:1px solid var(--rule);
       border-radius:10px; background:rgba(255,255,255,.05); font-weight:600
@@ -65,18 +65,74 @@
     .img-frame{border:1px solid var(--rule); border-radius:12px; overflow:hidden}
     .img-frame img{width:100%; display:block}
     .small{color:var(--muted); font-size:14px}
+
+    /* XAI grid styles */
+    .grid-xai{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      margin-top:14px;
+    }
+    @media(min-width:800px){
+      .grid-xai{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    .card-xai{
+      background:rgba(17,19,27,.6);
+      border-radius:12px;
+      border:1px solid var(--rule);
+      padding:14px 16px;
+    }
+    .card-xai h3{
+      margin-top:0;
+      font-size:18px;
+    }
+    .card-xai ul{
+      margin-top:6px;
+      padding-left:18px;
+    }
+    .tagline{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      font-style:italic;
+    }
   </style>
 </head>
 <body>
   <!-- Sticky top navigation: jump between artifacts -->
   <nav class="topnav">
     <div class="inner">
+      <a class="tab" href="#intro">Intro</a>
       <a class="tab" href="#artifact-1">Artifact 1 <span class="badge">ML Algorithms</span></a>
       <a class="tab" href="#artifact-2">Artifact 2 <span class="badge">Neural Networks</span></a>
+      <a class="tab" href="#artifact-3">Artifact 3 <span class="badge">Explainable AI</span></a>
     </div>
   </nav>
 
   <div class="wrap">
+
+    <!-- =============== INTRODUCTION =============== -->
+   <section id="intro">
+  <header>
+    <h1>AI & Machine Learning Portfolio Artifacts</h1>
+    <p class="lead">
+      I am a curious and growth-oriented developer with a strong interest in artificial intelligence,
+      machine learning, and large language models. Through my coursework and projects, I’ve been
+      building a solid foundation in core ML algorithms, neural network architectures, and responsible
+      AI practices. 
+      <br><br>
+      This portfolio page highlights three key artifacts from my learning journey. The first visual
+      framework maps out essential machine learning algorithms and their use cases. The second artifact
+      breaks down the components of neural networks and shows how layers, activations, and optimization
+      work together to learn patterns from data. The third artifact focuses on Explainable AI,
+      summarizing how validation, performance metrics, and industry techniques help make powerful models
+      like GPT more transparent and trustworthy. Together, these artifacts demonstrate both my technical
+      growth and my commitment to using AI in thoughtful, explainable ways.
+    </p>
+  </header>
+  <div class="hr"></div>
+</section>
+
 
     <!-- =============== ARTIFACT 1 =============== -->
     <section id="artifact-1">
@@ -96,8 +152,6 @@
       </div>
 
       <div class="hr"></div>
-
-      <!-- *** Your original 10-algorithm sections remain unchanged below *** -->
 
       <!-- 1 Decision Tree -->
       <section class="alg" id="decision-tree">
@@ -327,92 +381,164 @@
         <img src="assets/10.jpg" alt="Transformers Infographic">
       </section>
 
-      
       <div class="hr"></div>
     </section>
 
-  <!-- =============== ARTIFACT 2 =============== -->
-<section id="artifact-2">
-  <header>
-    <h1>Artifact 2 ~ Neural Network Components & Architecture</h1>
-    <p class="lead">This artifact explores the structure and function of artificial neural networks using the <em>Neural Network Playground</em>. It demonstrates how key components layers, neurons, weights, activations, loss functions, and optimizers interact to enable learning and pattern recognition.</p>
-  </header>
+    <!-- =============== ARTIFACT 2 =============== -->
+    <section id="artifact-2">
+      <header>
+        <h1>Artifact 2 ~ Neural Network Components & Architecture</h1>
+        <p class="lead">This artifact explores the structure and function of artificial neural networks using the <em>Neural Network Playground</em>. It demonstrates how key components layers, neurons, weights, activations, loss functions, and optimizers interact to enable learning and pattern recognition.</p>
+      </header>
 
-  <div class="hero">
-    <img src="assets/NNArchitecture.jpg" alt="Feedforward Neural Network Architecture Diagram">
-  </div>
+      <div class="hero">
+        <img src="assets/NNArchitecture.jpg" alt="Feedforward Neural Network Architecture Diagram">
+      </div>
 
-  <h3>Define and Describe Components</h3>
-  <div class="callout">
-    <h4>1. Layers</h4>
-    <p>
-      Neural networks are organized into layers that process data in stages.  
-      The <strong>Input Layer</strong> receives raw data (features), passing it forward to one or more <strong>Hidden Layers</strong> that extract patterns and relationships through weighted transformations.  
-      Finally, the <strong>Output Layer</strong> produces predictions or classifications based on the learned representations.  
-      Each layer increases the network’s ability to model complex, nonlinear relationships.
-    </p>
+      <h3>Define and Describe Components</h3>
+      <div class="callout">
+        <h4>1. Layers</h4>
+        <p>
+          Neural networks are organized into layers that process data in stages.  
+          The <strong>Input Layer</strong> receives raw data (features), passing it forward to one or more <strong>Hidden Layers</strong> that extract patterns and relationships through weighted transformations.  
+          Finally, the <strong>Output Layer</strong> produces predictions or classifications based on the learned representations.  
+          Each layer increases the network’s ability to model complex, nonlinear relationships.
+        </p>
 
-    <h4>2. Neurons</h4>
-    <p>
-      A neuron, also known as a node or unit, is the core computational element of a neural network.  
-      Each neuron receives input values, multiplies them by corresponding weights, adds a bias, and applies an activation function.  
-      The result is passed to the next layer.  
-      This simple operation, when repeated across thousands of neurons and layers, allows networks to perform tasks such as image recognition, language understanding, and prediction.
-    </p>
+        <h4>2. Neurons</h4>
+        <p>
+          A neuron, also known as a node or unit, is the core computational element of a neural network.  
+          Each neuron receives input values, multiplies them by corresponding weights, adds a bias, and applies an activation function.  
+          The result is passed to the next layer.  
+          This simple operation, when repeated across thousands of neurons and layers, allows networks to perform tasks such as image recognition, language understanding, and prediction.
+        </p>
 
-    <h4>3. Weights</h4>
-    <p>
-      <strong>Weights</strong> determine how strongly each input feature or neuron influences the next layer.  
-      They are the network’s learnable parameters and are adjusted during training to minimize prediction error.  
-      High positive weights strengthen a connection, while negative or smaller weights reduce its impact.  
-      Collectively, weights define what the network has “learned” from the data.
-    </p>
+        <h4>3. Weights</h4>
+        <p>
+          <strong>Weights</strong> determine how strongly each input feature or neuron influences the next layer.  
+          They are the network’s learnable parameters and are adjusted during training to minimize prediction error.  
+          High positive weights strengthen a connection, while negative or smaller weights reduce its impact.  
+          Collectively, weights define what the network has “learned” from the data.
+        </p>
 
-    <h4>4. Activation Functions</h4>
-    <p>
-      Activation functions introduce <strong>non-linearity</strong> into the model, enabling it to learn complex, nonlinear patterns.  
-      Without activations, the entire network would behave like a simple linear regression.  
-      Common activation functions include:
-      <ul>
-        <li><strong>ReLU (Rectified Linear Unit):</strong> Efficient and widely used; outputs 0 for negative inputs and linear for positives.</li>
-        <li><strong>Sigmoid:</strong> Maps values between 0 and 1, often used for probabilities.</li>
-        <li><strong>Tanh:</strong> Similar to sigmoid but ranges from -1 to 1, allowing negative activations.</li>
-      </ul>
-    </p>
+        <h4>4. Activation Functions</h4>
+        <p>
+          Activation functions introduce <strong>non-linearity</strong> into the model, enabling it to learn complex, nonlinear patterns.  
+          Without activations, the entire network would behave like a simple linear regression.  
+          Common activation functions include:
+        <ul>
+          <li><strong>ReLU (Rectified Linear Unit):</strong> Efficient and widely used; outputs 0 for negative inputs and linear for positives.</li>
+          <li><strong>Sigmoid:</strong> Maps values between 0 and 1, often used for probabilities.</li>
+          <li><strong>Tanh:</strong> Similar to sigmoid but ranges from -1 to 1, allowing negative activations.</li>
+        </ul>
+        </p>
 
-    <h4>5. Loss Functions</h4>
-    <p>
-      The <strong>Loss Function</strong> measures how far the model’s predictions are from the true outputs.  
-      It provides numerical feedback to guide learning—lower loss means better performance.  
-      In this network, we use the <strong>Mean Squared Error (MSE)</strong>, which calculates the average of the squared differences between predicted and actual values.  
-      This function is ideal for regression tasks and helps the optimizer minimize overall prediction error during training.
-    </p>
+        <h4>5. Loss Functions</h4>
+        <p>
+          The <strong>Loss Function</strong> measures how far the model’s predictions are from the true outputs.  
+          It provides numerical feedback to guide learning—lower loss means better performance.  
+          In this network, we use the <strong>Mean Squared Error (MSE)</strong>, which calculates the average of the squared differences between predicted and actual values.  
+          This function is ideal for regression tasks and helps the optimizer minimize overall prediction error during training.
+        </p>
 
-    <h4>6. Optimization Algorithms</h4>
-    <p>
-      Optimization algorithms adjust the network’s weights to reduce the loss function.  
-      They calculate gradients using <strong>backpropagation</strong> and update weights in the direction that lowers error.  
-      Common optimizers include:
-      <ul>
-        <li><strong>Stochastic Gradient Descent (SGD):</strong> Updates weights incrementally for faster convergence.</li>
-        <li><strong>Adam Optimizer:</strong> Combines the benefits of momentum and adaptive learning rates, improving stability and speed.</li>
-      </ul>
-      The optimizer is crucial because it ensures that learning happens efficiently and avoids getting stuck in local minima.
-    </p>
-  </div>
+        <h4>6. Optimization Algorithms</h4>
+        <p>
+          Optimization algorithms adjust the network’s weights to reduce the loss function.  
+          They calculate gradients using <strong>backpropagation</strong> and update weights in the direction that lowers error.  
+          Common optimizers include:
+        <ul>
+          <li><strong>Stochastic Gradient Descent (SGD):</strong> Updates weights incrementally for faster convergence.</li>
+          <li><strong>Adam Optimizer:</strong> Combines the benefits of momentum and adaptive learning rates, improving stability and speed.</li>
+        </ul>
+          The optimizer is crucial because it ensures that learning happens efficiently and avoids getting stuck in local minima.
+        </p>
+      </div>
 
-  <h3>Summary</h3>
-  <p class="callout">
-    This visualization demonstrates how each component contributes to the neural network’s learning process.  
-    Layers structure the flow of information, neurons perform the core computations, and weights capture learned relationships.  
-    Activation functions enable flexibility and non-linearity, while the loss function measures performance and drives improvement.  
-    Finally, the optimizer refines the model by adjusting weights over many iterations.  
-    Through experiments in the Neural Network Playground, it becomes clear that even small changes in architecture like increasing neurons or altering activations and this can significantly impact how well a model learns and generalizes.
-  </p>
-  <footer>
-        <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
-      </footer>
-</section>
+      <h3>Summary</h3>
+      <p class="callout">
+        This visualization demonstrates how each component contributes to the neural network’s learning process.  
+        Layers structure the flow of information, neurons perform the core computations, and weights capture learned relationships.  
+        Activation functions enable flexibility and non-linearity, while the loss function measures performance and drives improvement.  
+        Finally, the optimizer refines the model by adjusting weights over many iterations.  
+        Through experiments in the Neural Network Playground, it becomes clear that even small changes in architecture like increasing neurons or altering activations and this can significantly impact how well a model learns and generalizes.
+      </p>
+    </section>
+
+    <!-- =============== ARTIFACT 3 =============== -->
+    <section id="artifact-3">
+      <header>
+        <h1>Artifact 3 ~ Explainable AI & Trustworthy Large Language Models</h1>
+        <p class="lead">
+          This artifact summarizes key ideas in Explainable AI (XAI) for models like GPT, Claude, Gemini, and LLaMA. It highlights why explainability matters, the main challenges, how validation and metrics support trustworthy AI, and current industry techniques to make model behavior more transparent.
+        </p>
+      </header>
+
+      <div class="grid-xai">
+        <!-- Card 1 -->
+        <div class="card-xai">
+          <h3>Explainable AI & Its Importance</h3>
+          <ul>
+            <li><strong>Explainable AI (XAI)</strong> focuses on making AI decisions understandable so people can see <em>why</em> a model produced a particular answer.</li>
+            <li>Large language models often act like <strong>“black boxes”</strong>, so their internal reasoning is hidden from users.</li>
+            <li>Transparent explanations build <strong>trust</strong> for users, organizations, and regulators, especially in domains like healthcare, finance, and law.</li>
+            <li>XAI also supports <strong>debugging and improvement</strong> by revealing where models hallucinate, fail, or encode bias.</li>
+            <li>Ultimately, explainability is linked to <strong>accountability</strong>: if AI influences real people’s lives, its reasoning should not be a mystery.</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-xai">
+          <h3>Challenges in Explainability</h3>
+          <ul>
+            <li><strong>Opacity & complexity:</strong> LLMs use billions of parameters, and no single piece explains a specific output.</li>
+            <li><strong>Post-hoc explanations</strong> are created after the decision and may not fully match the model’s real internal process.</li>
+            <li><strong>Data quality & bias:</strong> models inherit imperfections, stereotypes, and gaps from the data they are trained on.</li>
+            <li><strong>Dynamic behavior:</strong> small changes in wording or context can produce very different answers.</li>
+            <li><strong>Regulatory & ethical pressures:</strong> laws and policies increasingly require meaningful explanations that are difficult to provide for complex systems.</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-xai">
+          <h3>Validation & Performance Metrics</h3>
+          <ul>
+            <li><strong>Validation</strong> tests models on unseen data to check how well they generalize to real-world use cases.</li>
+            <li><strong>Performance metrics</strong> such as accuracy, precision, recall, F1 score, and calibration quantify how often the model is correct.</li>
+            <li><strong>Robustness testing</strong> stresses the model with edge cases, adversarial prompts, and unusual inputs to see if it still behaves safely.</li>
+            <li><strong>Fairness and bias metrics</strong> evaluate whether performance is similar across groups, supporting ethical deployment.</li>
+            <li>Together, validation and metrics provide <strong>evidence</strong> that a system is not just powerful but also <strong>reliable and trustworthy</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-xai">
+          <h3>Current Solutions & Techniques</h3>
+          <ul>
+            <li><strong>OpenAI & Anthropic</strong> use Reinforcement Learning from Human Feedback (RLHF), red-teaming, and safety evaluations to shape model behavior.</li>
+            <li><strong>Google</strong> introduced <em>Model Cards</em>, interpretability tools (e.g., saliency visualizations), and strong review processes for models like Gemini.</li>
+            <li><strong>Meta</strong> provides documentation and responsible-release guidelines for models such as LLaMA, along with ongoing interpretability research.</li>
+            <li>Across industry, tools like <strong>attention visualization</strong>, local explanation methods (LIME/SHAP-style ideas), and <strong>chain-of-thought reasoning</strong> help reveal how models prioritize inputs.</li>
+            <li>Organizations also publish <strong>transparency reports</strong>, safety updates, and usage policies to help non-technical audiences understand where models work well—and where they do not.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="tagline">
+        Goal: Combine explainability, validation, and clear performance metrics so AI systems are not only powerful, but also <strong>transparent, fair, and trustworthy</strong> for real people.
+      </p>
+
+      <h3>Explanatory Summary</h3>
+      <p class="callout">
+        This visual introduces Explainable AI (XAI) in the context of large language models such as GPT, Claude, Gemini, and LLaMA. The top-left section defines XAI and explains why transparency is crucial for trust, accountability, and debugging in high-stakes domains. The top-right section highlights key obstacles, including the complexity of “black box” models, post-hoc explanations that may not match true reasoning, data-driven bias, and regulatory expectations for transparency. Together, these panels show why explainability is both technically challenging and ethically important.
+      </p>
+      <p class="callout">
+        The bottom panels connect explainability to validation and real industry practice. The bottom-left section summarizes how validation methods and performance metrics—such as accuracy, precision, recall, robustness, and fairness checks—provide evidence that a model is reliable and safe to deploy. The bottom-right section highlights current approaches from organizations like OpenAI, Google, Meta, and Anthropic, including human-feedback training, interpretability tools, documentation, and transparency reports. Visually grouping the content into four quadrants helps a non-technical audience see how challenges, metrics, and practical techniques fit together toward the shared goal of trustworthy, explainable AI.
+      </p>
+    </section>
+
+    <footer>
+      <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
+    </footer>
 
   </div>
   <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
