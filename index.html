@@ -106,6 +106,7 @@
       <a class="tab" href="#artifact-1">Artifact 1 <span class="badge">ML Algorithms</span></a>
       <a class="tab" href="#artifact-2">Artifact 2 <span class="badge">Neural Networks</span></a>
       <a class="tab" href="#artifact-3">Artifact 3 <span class="badge">Explainable AI</span></a>
+      <a class="tab" href="#artifact-4">Artifact 4 <span class="badge">LLM Training</span></a>
     </div>
   </nav>
 
@@ -523,6 +524,69 @@
     </ul>
     These approaches help users understand how models behave and where their limitations lie.
   </p>
+  </section>
+      <!-- =============== ARTIFACT 4 =============== -->
+    <section id="artifact-4">
+      <header>
+        <h1>Artifact 4 ~ LLM Training Process & Resource Costs</h1>
+        <p class="lead">
+          This artifact is an infographic generated with NotebookLM that explains how modern large language
+          models (LLMs) are trained. It highlights the end-to-end pipeline from data collection through
+          deployment, and visualizes the key resource categories: data, compute, energy, and time.
+        </p>
+      </header>
+
+      <div class="hero">
+        <!-- Update the filename if your exported image has a different name -->
+        <img src="assets/LLM_infographic.png" alt="Infographic describing LLM training process and resource costs">
+      </div>
+
+      <h3>1. Training Pipeline Overview</h3>
+      <p class="callout">
+        The infographic walks through the main steps involved in training generative AI LLMs:
+        <ul>
+          <li><strong>Data Collection</strong> – gathering large text and code datasets from public, licensed, and curated sources.</li>
+          <li><strong>Data Cleaning &amp; Tokenization</strong> – removing spam and sensitive content, then converting text into tokens.</li>
+          <li><strong>Model Design</strong> – choosing a Transformer architecture, layer counts, and parameter size.</li>
+          <li><strong>Pretraining</strong> – running the model on billions of tokens using large GPU/TPU clusters.</li>
+          <li><strong>Fine-Tuning &amp; Alignment</strong> – adapting the model with human feedback and safety training.</li>
+          <li><strong>Evaluation &amp; Deployment</strong> – testing on benchmarks, then serving the model through scalable APIs.</li>
+        </ul>
+      </p>
+
+      <h3>2. Resource Categories & Costs</h3>
+      <p class="callout">
+        A central focus of the artifact is the resource footprint of LLMs:
+        <ul>
+          <li><strong>Data</strong> – licensing high-quality corpora, storage infrastructure, and human labeling.</li>
+          <li><strong>Compute</strong> – thousands of GPUs or TPUs running for weeks; the largest expense for GPT-4-scale models.</li>
+          <li><strong>Energy</strong> – significant electricity use for both computation and cooling in data centers.</li>
+          <li><strong>Time</strong> – months of data preparation, pretraining runs, fine-tuning cycles, and safety reviews.</li>
+        </ul>
+        By grouping these elements visually, the infographic shows why training frontier LLMs can cost tens to hundreds of
+        millions of dollars.
+      </p>
+
+      <h3>3. Model Examples Highlighted</h3>
+      <p class="callout">
+        To make the concepts concrete, the infographic includes examples of real generative AI models:
+        <ul>
+          <li><strong>GPT-4</strong> by OpenAI – a multimodal LLM trained on a large curated corpus with extensive alignment work.</li>
+          <li><strong>Claude 3</strong> by Anthropic – emphasizes safety via Constitutional AI and robust red-teaming.</li>
+          <li><strong>Gemini Ultra</strong> by Google DeepMind – a multimodal model trained on TPU supercomputers.</li>
+          <li><strong>LLaMA 3</strong> by Meta – open-weight models trained on a mixture of public and synthetic data.</li>
+        </ul>
+        Each example connects training choices (data scale, compute type) to trade-offs in cost, accessibility, and openness.
+      </p>
+
+      <h3>4. Skills Demonstrated</h3>
+      <p class="callout">
+        This artifact demonstrates my ability to synthesize technical readings about LLM infrastructure and translate them into
+        a clear visual story. I used NotebookLM and structured prompts to design an infographic that is accessible to
+        non-technical stakeholders while still accurate enough for technical audiences. It showcases my understanding of
+        transformers, training pipelines, and the economic and environmental considerations of large-scale AI.
+      </p>
+    </section>
 
     <footer>
       <p>© <span id="yr"></span> Aneesah • GitHub Pages Portfolio Artifact</p>
