@@ -108,6 +108,7 @@
       <a class="tab" href="#artifact-2">Artifact 2 <span class="badge">Neural Networks</span></a>
       <a class="tab" href="#artifact-3">Artifact 3 <span class="badge">Explainable AI</span></a>
       <a class="tab" href="#artifact-4">Artifact 4 <span class="badge">LLM Training</span></a>
+      <a class="tab" href="#artifact-5">Artifact 5 <span class="badge">Model Matrix</span></a>
     </div>
   </nav>
 
@@ -586,6 +587,145 @@
         a clear visual story. I used NotebookLM and structured prompts to design an infographic that is accessible to
         non-technical stakeholders while still accurate enough for technical audiences. It showcases my understanding of
         transformers, training pipelines, and the economic and environmental considerations of large-scale AI.
+      </p>
+    </section>
+
+    <!-- =============== ARTIFACT 5 =============== -->
+    <section id="artifact-5">
+      <header>
+        <h1>Artifact 5 ~ Pre-Trained Model Comparison & Decision Matrix</h1>
+        <p class="lead">
+          This artifact evaluates several widely used pre-trained models across different domains.
+          The goal is to balance <strong>accuracy</strong>, <strong>computational cost</strong>, <strong>speed</strong>,
+          and <strong>interpretability</strong> when choosing a model for a new project.
+        </p>
+      </header>
+
+      <h3>1. Introduction & Motivation</h3>
+      <p class="callout">
+        Modern AI workflows often start from pre-trained models instead of training from scratch. While this
+        accelerates development, it also introduces an important design question: <em>which model should we
+        start from?</em> The “best” choice depends on domain (NLP, vision, tabular), hardware limits, latency
+        requirements, and how much explainability is required for stakeholders. This artifact presents a
+        concise comparison of four representative models and documents the trade-offs that guide model
+        selection.
+      </p>
+
+      <h3>2. Methodology: Model Selection & Data Sources</h3>
+      <p class="callout">
+        I selected at least one model from each of the requested domains:
+        <ul>
+          <li><strong>NLP / Generative AI:</strong> <em>BERT base</em> (encoder) and <em>GPT-3.5-Turbo</em> (chat-style LLM).</li>
+          <li><strong>Computer Vision:</strong> <em>MobileNetV2</em>, a lightweight CNN designed for mobile devices.</li>
+          <li><strong>Tabular Data:</strong> <em>XGBoost</em>, a gradient-boosted tree ensemble commonly used for
+              structured business data.</li>
+        </ul>
+        For each model, I gathered information from official documentation and respected community sources
+        (such as Hugging Face docs, Keras Applications, and OpenAI’s model pages). Rather than relying on
+        exact benchmark numbers—which can vary by dataset—I summarize <strong>relative characteristics</strong>
+        (small / medium / large size, fast / moderate / slow speed) and typical use cases.
+      </p>
+
+      <h3>3. Decision Matrix</h3>
+      <p class="small">
+        Key criteria: model size affects memory and deployment cost; accuracy refers to typical performance on
+        standard benchmarks in the model’s domain; speed refers to inference latency on common hardware; and
+        explainability captures how easy it is to understand or justify predictions.
+      </p>
+
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Domain</th>
+            <th>Model Size</th>
+            <th>Accuracy (Typical)</th>
+            <th>Speed</th>
+            <th>Explainability</th>
+            <th>Best-Fit Scenarios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>BERT base</strong></td>
+            <td>NLP (encoder)</td>
+            <td><span class="pill pill-medium">Medium (~110M params)</span></td>
+            <td>Strong on classification, QA, NER after fine-tuning.</td>
+            <td><span class="pill pill-moderate">Moderate</span></td>
+            <td>Medium – attention weights & token attributions help, but still a deep model.</td>
+            <td>Search ranking, intent detection, sentiment analysis where latency is acceptable and some interpretability is needed.</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-3.5-Turbo</strong></td>
+            <td>Generative NLP / chat</td>
+            <td><span class="pill pill-large">Large (multi-billion params, hosted)</span></td>
+            <td>Very strong for generation, reasoning, and few-shot tasks.</td>
+            <td><span class="pill pill-slow">Slower & costlier per request</span></td>
+            <td>Low – behaves as a black box; explanations are textual but not guaranteed faithful.</td>
+            <td>Conversational agents, code generation, complex summarization where flexibility matters more than strict latency or full transparency.</td>
+          </tr>
+          <tr>
+            <td><strong>MobileNetV2</strong></td>
+            <td>Computer Vision</td>
+            <td><span class="pill pill-small">Small (&lt;5M params)</span></td>
+            <td>Good accuracy for many image tasks with transfer learning.</td>
+            <td><span class="pill pill-fast">Fast (mobile-friendly)</span></td>
+            <td>Medium – convolutional features are harder to interpret, but saliency maps & Grad-CAM help.</td>
+            <td>Edge or mobile image classification, embedded cameras, or applications with strict latency and power limits.</td>
+          </tr>
+          <tr>
+            <td><strong>XGBoost</strong></td>
+            <td>Tabular / structured data</td>
+            <td><span class="pill pill-small">Small-to-Medium (tree ensemble)</span></td>
+            <td>State-of-the-art on many tabular benchmarks.</td>
+            <td><span class="pill pill-fast">Fast for single predictions</span></td>
+            <td>High – feature importance, tree inspection, and SHAP values support rich explanations.</td>
+            <td>Credit risk, churn prediction, pricing, and other business problems where explainability and auditability are critical.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4. Analysis & Recommendations</h3>
+      <div class="callout">
+        <p>
+          The matrix highlights that there is no single “best” pre-trained model; the right choice depends on
+          domain and constraints:
+        </p>
+        <ul>
+          <li><strong>For NLP classification tasks</strong> (intent, sentiment, topic labels), <em>BERT base</em> strikes a
+              good balance between performance and cost. It is easier to deploy than GPT-class models and supports
+              token-level attribution for partial explainability.</li>
+          <li><strong>For open-ended language generation</strong> (chatbots, drafting emails, creative writing),
+              <em>GPT-3.5-Turbo</em> is clearly stronger. However, it is hosted as an API, has higher latency, and offers
+              less direct control over training data and internal behavior.</li>
+          <li><strong>For image tasks</strong> where the model must run on a phone, embedded device, or low-power GPU,
+              <em>MobileNetV2</em> is ideal. Its small parameter count makes it memory-efficient while still delivering
+              solid accuracy through transfer learning.</li>
+          <li><strong>For business analytics on structured data</strong>, tree-based ensembles like <em>XGBoost</em> remain
+              extremely competitive. They typically outperform deep models on tabular datasets and provide excellent
+              explainability via feature importance and SHAP analysis.</li>
+        </ul>
+        <p>
+          From an <strong>explainability</strong> perspective, XGBoost is the most transparent, followed by BERT, with
+          MobileNetV2 and GPT-3.5-Turbo being harder to interpret. From a <strong>compute and speed</strong> perspective,
+          MobileNetV2 and XGBoost are efficient, while GPT-3.5-Turbo is the most demanding but also the most capable for
+          generative tasks.
+        </p>
+      </div>
+
+      <h3>5. Conclusion</h3>
+      <p class="callout">
+        This decision matrix shows how comparing pre-trained models across <strong>size, accuracy, speed, and
+        explainability</strong> helps guide responsible model selection. For future projects, I plan to:
+        <ul>
+          <li>Start with lightweight, explainable models for prototypes and regulated domains.</li>
+          <li>Introduce larger generative models only when their extra capability is clearly justified.</li>
+          <li>Use structured matrices like this one to document trade-offs and communicate choices to
+              non-technical stakeholders.</li>
+        </ul>
+        By combining technical performance with human-centric criteria such as transparency and deployment
+        constraints, model selection becomes a deliberate design decision rather than a default to the largest
+        available model.
       </p>
     </section>
 
